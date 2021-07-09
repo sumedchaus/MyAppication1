@@ -22,19 +22,21 @@ class GetRetrofitImage: AppCompatActivity() {
 
     }
 
-    fun imagedata(){
+    fun imagedata() {
         fun namepage() {
             //crating an arraylist to store users using the data class user
 
-            imageList.add(GetImageData(s"1", 1))
-            myList.add(ListData("2", "sumed"))
-            myList.add(ListData("3", "sumed"))
-            myList.add(ListData("4", "sumed"))
-            myList.add(ListData("5", "sumed"))
-            myList.add(ListData("6", "sumed"))
-            myList.add(ListData("7 ", "sumed"))
-            myList.add(ListData("8", "sumed"))
-            myList.add(ListData("9", "sumed"))
-            myList.add(ListData("10", "sumed"))
+            //      imageList.add(GetImageData(s"1", 1))
+//            myList.add(ListData("2", "sumed"))
+//            myList.add(ListData("3", "sumed"))
+//            myList.add(ListData("4", "sumed"))
+//            myList.add(ListData("5", "sumed"))
+//            myList.add(ListData("6", "sumed"))
+//            myList.add(ListData("7 ", "sumed"))
+//            myList.add(ListData("8", "sumed"))
+//            myList.add(ListData("9", "sumed"))
+//            myList.add(ListData("10", "sumed"))
 
         }
+    }
+}
