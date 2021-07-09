@@ -14,6 +14,11 @@
     <string name="neft_facility">NEFT Facility Available </string>
     <string name="list_names">Name</string>
     <string name="list_codes">Code</string>
+    <string name="user_Name">User Name</string>
+    <string name="Suite">Suite </string>
+    <string name="city">city </string>
+    <string name="Zip_Code">Zip Code </string>
+    <string name="geo">Geo: </string>
 
     //custom dialog
 

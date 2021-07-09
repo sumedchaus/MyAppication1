@@ -27,6 +27,10 @@ class BridgeActivity: AppCompatActivity() {
             val intent = Intent(this, GetRetrofitImage::class.java)
             startActivity(intent)
         }
+        get_personal_Info.setOnClickListener {
+            val intent = Intent(this, UserFullDetailData::class.java)
+            startActivity(intent)
+        }
 
     }
 }

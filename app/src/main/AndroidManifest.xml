@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
     android:theme="@style/AppTheme">
+        <activity android:name=".UserFullDetailData"></activity>
         <activity android:name=".GetRetrofitImage"></activity>
         <activity android:name=".PostRetrofitData"></activity>
         <activity android:name=".BridgeActivity"></activity>
