@@ -33,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         //data binding
-        val loanDAtaObj = LoanData("Sumed", "1234567890", "sumedchaus@gmail.com", "habsiguda", "100000", "1", "1")
+      //  val loanDAtaObj = LoanData(customerName = null, address = null, email = null,loanAmount = null,loantenure = null,mobileNumber = null,rateOfInterest = null)
+    // or use this
+       val loanDAtaObj = LoanData("Sumed", "1234567890", "sumedchaus@gmail.com", "habsiguda", "100000", "1", "1")
         binding.loanData = loanDAtaObj
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
@@ -58,17 +60,16 @@ class MainActivity : AppCompatActivity() {
 
 
 // validation for app
-        submit_Btn.setOnClickListener {
-            var editTextCustomerName = editTextCustomerName.text.toString()
-            var editTextMobileNumber = editTextMobileNumber.text.toString()
-            var editTextEmailId = editTextEmailId.text.toString()
-            var editTextAddress = editTextAddress.text.toString()
-            var editTextLoanAmount = editTextLoanAmount.text.toString()
-            var editTextLoanTenureAmount = editTextLoanTenureAmount.text.toString()
-            var editTextRateOfInterest = editTextRateOfInterest.text.toString()
+        binding.submitBtn.setOnClickListener {
+//            var editTextCustomerName = editTextCustomerName.text.toString()
+//            var editTextMobileNumber = editTextMobileNumber.text.toString()
+//            var editTextEmailId = editTextEmailId.text.toString()
+//            var editTextAddress = editTextAddress.text.toString()
+//            var editTextLoanAmount = editTextLoanAmount.text.toString()
+//            var editTextLoanTenureAmount = editTextLoanTenureAmount.text.toString()
+//            var editTextRateOfInterest = editTextRateOfInterest.text.toString()
 
-
-            if (editTextCustomerName == "") {
+            if (loanDAtaObj.customerName == "") {
                 Toast.makeText(this, "Please Enter Name", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -76,31 +77,31 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please Select Marital Status ", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (!editTextMobileNumber.matches(MobilePattern.toRegex())) {
+            if (!loanDAtaObj.mobileNumber?.matches(MobilePattern.toRegex())!!) {
                 Toast.makeText(this, "Please Enter Valid Mobile Number", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (!editTextEmailId.matches(emailPattern.toRegex())) {
+            if (!loanDAtaObj.email?.matches(emailPattern.toRegex())!!) {
                 Toast.makeText(this, "Please Enter Valid Email Address", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
 
             }
-            if (editTextAddress == "") {
+            if (loanDAtaObj.address == "") {
                 Toast.makeText(this, "Please Enter Address", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
 
             }
-            if (editTextLoanAmount == "") {
+            if (loanDAtaObj.loanAmount == "") {
                 Toast.makeText(this, "Please Enter Loan Amount", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
 
             }
-            if (editTextLoanTenureAmount == "") {
+            if (loanDAtaObj.loantenure == "") {
                 Toast.makeText(this, "Please Enter Loan Tenure Month", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
 
             }
-            if (editTextRateOfInterest == "") {
+            if (loanDAtaObj.rateOfInterest == "") {
                 Toast.makeText(this, "Please Enter The Rate of Interest", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
 

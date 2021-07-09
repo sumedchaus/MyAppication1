@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication1.adapter.ApiClient
 import com.example.myapplication1.adapter.DataAdpter
 import com.example.myapplication1.dataclass.DataModel
+import com.example.myapplication1.dataclass.Post
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,6 +16,7 @@ import retrofit2.Response
 class GetRetrofitData: AppCompatActivity() {
     lateinit var progerssProgressDialog: ProgressDialog
     var dataList = ArrayList<DataModel>()
+    var postList = ArrayList<Post>()
     lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,26 +52,23 @@ class GetRetrofitData: AppCompatActivity() {
 
         })
     }
+ // for useing get post chane the url to title in adapter viewholder
+    private fun getPost() {   //  used for on responce and failure method
 
-//    private fun pushPost() {   //  used for on responce and failure method
-//
-//        val call = ApiClient.api.pushPost(Post(1, 2, "hj", "gyh"))
-//
-//        call.enqueue(object : Callback<Post> {  // then call callback enque method
-//
-//
-//            override fun onResponse(call: Call<Post>, response: Response<Post>) {
-//                progerssProgressDialog.dismiss()
-//                Log.d("SecondActivity" , response.body()!!.title)
-//
-//            }
-//
-//            override fun onFailure(call: Call<Post>, t: Throwable) {
-//                progerssProgressDialog.dismiss()
-//                Toast.makeText(this@SecondActivity, "Operation Fail", Toast.LENGTH_SHORT).show()
-//            }
-//
-//        })
-//
-//    }
+        val call: Call<List<Post>> = ApiClient.api.getPost()  // calling the url using apibuilder and api interfaace and api call function(getPhotos)
+        call.enqueue(object : Callback<List<Post>> {  // then call callback enque method
+
+            override fun onResponse(call: Call<List<Post>>?, response: Response<List<Post>>?) {
+                progerssProgressDialog.dismiss()
+                postList.addAll(response!!.body()!!)
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+
+            override fun onFailure(call: Call<List<Post>>?, t: Throwable?) {
+                progerssProgressDialog.dismiss()
+            }
+
+        })
+
+    }
 }

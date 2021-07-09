@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.example.myapplication1.adapter.ApiClient
+import com.example.myapplication1.databinding.PostretrofitdataBinding
 import com.example.myapplication1.dataclass.DataModel
 import com.example.myapplication1.dataclass.Post
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,35 +18,40 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PostRetrofitData() : AppCompatActivity() {
+    lateinit var binding: PostretrofitdataBinding
     lateinit var progerssProgressDialog: ProgressDialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.postretrofitdata)
+        binding = DataBindingUtil.setContentView(this, R.layout.postretrofitdata)
+
+
+        val postDataObj = Post(null,null,null,null )
+        binding.postData = postDataObj
 
         postDataBtn.setOnClickListener {
+//
+//            var userIdEditText = userIdEditText.text.toString()
+//            var titleEditText = titleEditText.text.toString()
+//            var bodyEditText = bodyEditText.text.toString()
 
-            var userIdEditText = userIdEditText.text.toString()
-            var titleEditText = titleEditText.text.toString()
-            var bodyEditText = bodyEditText.text.toString()
 
 
-
-            if (userIdEditText == "") {
+            if (postDataObj.userId == "") {
                 Toast.makeText(this, "Please Enter UserID", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (titleEditText == "") {
+            if (postDataObj.title == "") {
                 Toast.makeText(this, "Please Enter Title", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if (bodyEditText == "") {
+            if (postDataObj.body == "") {
                 Toast.makeText(this, "Please Enter body", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val modal = Post(userIdEditText, "1",titleEditText,bodyEditText)
+            val modal = Post(postDataObj.userId, "1",postDataObj.title,postDataObj.title)
             val call = ApiClient.api.pushPost(modal)
             // or
         //    val call = ApiClient.api.pushPost(Post(userIdEditText, "1", titleEditText, bodyEditText))

@@ -22,4 +22,7 @@ fun getPhotos(): Call<List<DataModel>>
 
     @GET("photos")
     fun getImage(): Call<List<GetImageData>>
+
+    @GET("posts")
+    fun getPost(): Call<List<Post>>
 }
