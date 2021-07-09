@@ -1,16 +1,23 @@
 package com.example.myapplication1
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication1.adapter.ApiClient
 import com.example.myapplication1.adapter.DataAdpter
 import com.example.myapplication1.adapter.GetImageDataAdapter
+import com.example.myapplication1.dataclass.DataModel
 import com.example.myapplication1.dataclass.GetImageData
 import com.example.myapplication1.dataclass.ListData
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class GetRetrofitImage: AppCompatActivity() {
     var imageList = ArrayList<GetImageData>()
+    lateinit var progerssProgressDialog: ProgressDialog
     lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,23 +27,33 @@ class GetRetrofitImage: AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
 
+        progerssProgressDialog = ProgressDialog(this)
+        progerssProgressDialog.setTitle("Loading")
+        progerssProgressDialog.setCancelable(false)
+        progerssProgressDialog.show()
+        getImageData()
+        //   pushPost()
     }
 
-    fun imagedata() {
-        fun namepage() {
-            //crating an arraylist to store users using the data class user
+    private fun getImageData() {   //  used for on responce and failure method
+        val call: Call<List<GetImageData>> =
+            ApiClient.api.getImage()  // calling the url using apibuilder and api interfaace and api call function(getPhotos)
+        call.enqueue(object : Callback<List<GetImageData>> {  // then call callback enque method
 
-            //      imageList.add(GetImageData(s"1", 1))
-//            myList.add(ListData("2", "sumed"))
-//            myList.add(ListData("3", "sumed"))
-//            myList.add(ListData("4", "sumed"))
-//            myList.add(ListData("5", "sumed"))
-//            myList.add(ListData("6", "sumed"))
-//            myList.add(ListData("7 ", "sumed"))
-//            myList.add(ListData("8", "sumed"))
-//            myList.add(ListData("9", "sumed"))
-//            myList.add(ListData("10", "sumed"))
 
-        }
+            override fun onResponse(
+                call: Call<List<GetImageData>>,
+                response: Response<List<GetImageData>>
+            ) {
+                progerssProgressDialog.dismiss()
+                imageList.addAll(response!!.body()!!)
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+
+            override fun onFailure(call: Call<List<GetImageData>>, t: Throwable) {
+                progerssProgressDialog.dismiss()
+            }
+
+        })
     }
 }

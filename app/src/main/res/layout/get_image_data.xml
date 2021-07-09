@@ -8,12 +8,19 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="10dp"
+        android:elevation="3dp"
+        app:contentPadding="5dp"
+    android:layout_marginTop="5dp"
+
+    >
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <ImageView
                 android:id="@+id/getDataImage"
@@ -25,7 +32,7 @@
 
             <TextView
                 android:id="@+id/idView"
-                android:layout_width="280dp"
+                android:layout_width="250dp"
                 android:layout_height="60dp"
                 android:text="Id"
                 app:layout_constraintStart_toEndOf="@+id/getDataImage"
@@ -33,7 +40,7 @@
 
             <TextView
                 android:id="@+id/titleView"
-                android:layout_width="280dp"
+                android:layout_width="250dp"
                 android:layout_height="60dp"
                 android:text="Title"
                 app:layout_constraintStart_toEndOf="@+id/getDataImage"

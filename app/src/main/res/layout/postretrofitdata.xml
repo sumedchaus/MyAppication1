@@ -1,7 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp"
+   >
+
+
+    <TextView
+        android:id="@+id/postdataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post Data"
+        android:textSize="30dp"
+android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/useridTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User Id"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postdataTextView" />
+
+
+    <EditText
+        android:id="@+id/userIdEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:background="@drawable/edit_text_border"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/useridTextView" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userIdEditText" />
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:background="@drawable/edit_text_border"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+
+    <TextView
+        android:id="@+id/bodyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Body"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
+
+
+    <EditText
+        android:id="@+id/bodyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text_border"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyTextView" />
+
+    <Button
+        android:id="@+id/postDataBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/bodyEditText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
