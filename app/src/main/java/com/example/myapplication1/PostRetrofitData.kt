@@ -51,7 +51,7 @@ class PostRetrofitData() : AppCompatActivity() {
                 Toast.makeText(this, "Please Enter body", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val modal = Post(postDataObj.userId, "1",postDataObj.title,postDataObj.title)
+            val modal = Post(postDataObj.userId, "1",postDataObj.title,postDataObj.body)
             val call = ApiClient.api.pushPost(modal)
             // or
         //    val call = ApiClient.api.pushPost(Post(userIdEditText, "1", titleEditText, bodyEditText))
@@ -107,15 +107,15 @@ class PostRetrofitData() : AppCompatActivity() {
         // val response: Response<Post> = ApiClient.api.pushPost(Post(1,2,"fgh","fhg"))
         val call = ApiClient.api.pushPost1(Post("77", "65", "chaus", "deff"))
 
-        call.enqueue(object : Callback<DataModel> {  // then call callback enque method
+        call.enqueue(object : Callback<Post> {  // then call callback enque method
 
 
-            override fun onResponse(call: Call<DataModel>, response: Response<DataModel>) {
+            override fun onResponse(call: Call<Post>, response: Response<Post>) {
                 Log.d("PostRetrofitData", response.body().toString())
                 Toast.makeText(this@PostRetrofitData, "$response", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onFailure(call: Call<DataModel>, t: Throwable) {
+            override fun onFailure(call: Call<Post>, t: Throwable) {
                 Toast.makeText(this@PostRetrofitData, "Operation Fail", Toast.LENGTH_SHORT).show()
             }
 

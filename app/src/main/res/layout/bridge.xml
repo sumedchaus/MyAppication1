@@ -10,7 +10,7 @@
         android:id="@+id/loanBridgeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loan List Data"
+        android:text="@string/loan_list_data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -18,7 +18,7 @@
         android:id="@+id/get_personal_Info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Personal Info"
+        android:text="@string/personal_info"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getImage" />
@@ -27,7 +27,7 @@
         android:id="@+id/retrofitGetBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Retrofit"
+        android:text="@string/get_retrofit"
         app:layout_constraintBottom_toTopOf="@+id/postRetrofitBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loanBridgeBtn" />
@@ -36,7 +36,7 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -44,7 +44,7 @@
         android:id="@+id/postRetrofitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Post Retrofit"
+        android:text="@string/post_retrofit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -52,7 +52,7 @@
         android:id="@+id/getImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Retrofit Image"
+        android:text="@string/get_retrofit_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

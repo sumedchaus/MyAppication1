@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="loanData"
-            type="com.example.myapplication1.dataclass.LoanData" />
+            name="personalData"
+            type="com.example.myapplication1.dataclass.personaldata.PersonalData" />
 
     </data>
 
@@ -25,7 +25,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 tools:ignore="ExtraText">
 
 
@@ -34,9 +34,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Personal Info"
+                    android:text="@string/personal_info"
                     android:textColor="@android:color/black"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:text="@={loanData.customerName}"
+                    android:text="@={personalData.user.name}"
                     android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/customerName_PersonalText"
@@ -86,6 +86,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
+                    android:text="@={personalData.user.username}"
                     android:inputType="textPersonName"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
@@ -115,8 +116,9 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:text="@={loanData.mobileNumber}"
-                    android:inputType="phone"
+                    android:text="@={personalData.user.email}"
+
+                    android:inputType="textEmailAddress"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/emailPersonal"
 
@@ -137,7 +139,7 @@
                     android:id="@+id/Street_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Street"
+                    android:text="@string/street"
                     android:layout_marginTop="10dp"
                     android:textColor="@android:color/black"
 
@@ -150,9 +152,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:gravity="start"
+                    android:text="@={personalData.address.street}"
                     android:inputType="textCapSentences|textNoSuggestions|textMultiLine"
-                    android:text="@={loanData.address}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/Street_textView" />
 
@@ -176,8 +177,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:text="@={loanData.loanAmount}"
-                    android:inputType="numberDecimal"
+                    android:text="@={personalData.address.suite}"
+                    android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textview_suite"
 
@@ -203,8 +204,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-
-                    android:inputType="number"
+                    android:text="@={personalData.address.city}"
+                    android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textview_city"
 
@@ -229,8 +230,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
+                    android:text="@={personalData.address.zipcode}"
                     android:inputType="numberDecimal"
-                    android:text="@={loanData.rateOfInterest}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textview_ZipCode"
 
@@ -248,23 +249,12 @@
 
                     />
 
-<!--                <EditText-->
-<!--                    android:id="@+id/editText_zipCode"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:background="@drawable/edit_text_border"-->
-<!--                    android:ems="10"-->
-<!--                    android:inputType="numberDecimal"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/rateOfInterestTextView"-->
-
-<!--                    />-->
                 <TextView
                     android:id="@+id/latTextview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Lat"
+                    android:text="@string/lat"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/geotextView"
@@ -278,6 +268,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
+                    android:text="@={personalData.geo.lat}"
                     android:inputType="numberDecimal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/latTextview"
@@ -288,7 +279,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="lng"
+                    android:text="@string/lng"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/latEditText"
@@ -302,6 +293,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
+                    android:text="@={personalData.geo.lng}"
                     android:inputType="numberDecimal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lngTextview"
@@ -312,7 +304,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Phone"
+                    android:text="@string/phone"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/lngEditText"
@@ -326,7 +318,9 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:inputType="numberDecimal"
+                    android:text="@={personalData.phone}"
+
+                    android:inputType="phone"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/phone_Personal_textView"
 
@@ -336,7 +330,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Website"
+                    android:text="@string/website"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/phone_Personal_EditText"
@@ -350,7 +344,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:inputType="numberDecimal"
+                    android:text="@={personalData.website}"
+                    android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/webSite_Text_View"
 
@@ -360,7 +355,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Company"
+                android:text="@string/company"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/webSite_EditText"
@@ -371,7 +366,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Company Name"
+                    android:text="@string/company_name"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/companye_Text_View"
@@ -385,7 +380,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:inputType="numberDecimal"
+                    android:text="@={personalData.company.name}"
+                    android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/companyName_Text_View"
 
@@ -395,7 +391,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Catch Phrase"
+                    android:text="@string/catch_phrase"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/company_name_EditText"
@@ -409,8 +405,9 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:text="@={loanData.loanAmount}"
-                    android:inputType="numberDecimal"
+                    android:text="@={personalData.company.catchPhrase}"
+
+                    android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/catchPhrase_Text_View"
 
@@ -421,7 +418,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="bs"
+                    android:text="@string/bs"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/catchPhrase_EditText"
@@ -435,8 +432,9 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:text="@={loanData.loanAmount}"
-                    android:inputType="numberDecimal"
+                    android:text="@={personalData.company.bs}"
+
+                    android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/bs_Text_View"
 
@@ -446,7 +444,7 @@
                     android:id="@+id/Btn_Personal_Info_Submit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Submit Info"
+                    android:text="@string/submit_info"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/bs_EditText"
                     app:layout_constraintTop_toBottomOf="@+id/bs_EditText" />

@@ -26,6 +26,32 @@
     <string name="show_custom_dialog">Show custom dialog</string>
     <string name="ok">OK</string>
     <string name="greetings_sent_successfully">Greetings sent successfully</string>
+    <string name="street">Street</string>
+    <string name="lat">Lat</string>
+    <string name="lng">lng</string>
+    <string name="phone">Phone</string>
+    <string name="website">Website</string>
+    <string name="company">Company</string>
+    <string name="company_name">Company Name</string>
+    <string name="catch_phrase">Catch Phrase</string>
+    <string name="bs">bs</string>
+    <string name="submit_info">Submit Info</string>
+    <string name="loan_list_data">Loan List Data</string>
+    <string name="personal_info">Personal Info</string>
+    <string name="get_retrofit">Get Retrofit</string>
+    <string name="button">Button</string>
+    <string name="post_retrofit">Post Retrofit</string>
+    <string name="get_retrofit_image">Get Retrofit Image</string>
+    <string name="custom_dialog">Custom Dialog</string>
+    <string name="this_is_a_custom_dialog_message">This is a custom dialog message</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="id">Id</string>
+    <string name="title">Title</string>
+    <string name="show">Show</string>
+    <string name="post_data">Post Data</string>
+    <string name="user_id">User Id</string>
+    <string name="body">Body</string>
+    <string name="post">Post</string>
 
 
 
