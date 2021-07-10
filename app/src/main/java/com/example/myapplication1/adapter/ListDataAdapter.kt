@@ -18,7 +18,7 @@ class ListDataAdapter(var context: Context, var list: ArrayList<ListData>) :
 
 
     // Inflating Layout and ViewHolder
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListDataAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: ItemlistloandataBinding = DataBindingUtil.inflate(
             LayoutInflater.from(context),
             R.layout.itemlistloandata,
@@ -26,7 +26,7 @@ class ListDataAdapter(var context: Context, var list: ArrayList<ListData>) :
             false
         )
 
-        val viewholder = ListDataAdapter.ViewHolder(binding)
+        val viewholder = ViewHolder(binding)
         binding.showBtnTapbtn.setOnClickListener {
 
 
@@ -51,7 +51,7 @@ class ListDataAdapter(var context: Context, var list: ArrayList<ListData>) :
     override fun getItemCount(): Int = list.size
 
     // Bind data
-    override fun onBindViewHolder(holder: ListDataAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 //        holder.bind(list.get(position))
         val model = list.get(position)
         holder.binding.listData = model

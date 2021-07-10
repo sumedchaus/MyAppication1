@@ -52,7 +52,7 @@
     <string name="user_id">User Id</string>
     <string name="body">Body</string>
     <string name="post">Post</string>
-
+    <string name="tods_data">Tods Data</string>
 
 
 </resources>

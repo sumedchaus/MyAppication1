@@ -3,6 +3,7 @@ package com.example.myapplication1.adapter
 import com.example.myapplication1.dataclass.DataModel
 import com.example.myapplication1.dataclass.GetImageData
 import com.example.myapplication1.dataclass.Post
+import com.example.myapplication1.dataclass.Tods
 import com.example.myapplication1.dataclass.personaldata.PersonalData
 import retrofit2.Call
 import retrofit2.http.Body
@@ -30,4 +31,8 @@ fun getPhotos(): Call<List<DataModel>>
     @POST("users")
     fun postUser(
         @Body personalData: PersonalData): Call<PersonalData>
+
+    @GET("tods")
+    fun getTods(): Call<List<Tods>>
+
 }

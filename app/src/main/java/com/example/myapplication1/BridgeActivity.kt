@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.bridge.*
-import kotlinx.android.synthetic.main.get_image_data.*
 
 class BridgeActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +27,11 @@ class BridgeActivity: AppCompatActivity() {
             startActivity(intent)
         }
         get_personal_Info.setOnClickListener {
-            val intent = Intent(this, UserFullDetailData::class.java)
+            val intent = Intent(this, PostUserFullDetailData::class.java)
+            startActivity(intent)
+        }
+        tods_Data.setOnClickListener {
+            val intent = Intent(this, GetTodsData::class.java)
             startActivity(intent)
         }
 

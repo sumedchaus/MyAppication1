@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/personal_info"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/tods_Data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getImage" />
 
@@ -33,10 +33,10 @@
         app:layout_constraintTop_toBottomOf="@+id/loanBridgeBtn" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/tods_Data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button"
+        android:text="@string/tods_data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

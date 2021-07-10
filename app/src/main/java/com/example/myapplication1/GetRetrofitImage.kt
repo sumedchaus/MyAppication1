@@ -41,10 +41,7 @@ class GetRetrofitImage: AppCompatActivity() {
         call.enqueue(object : Callback<List<GetImageData>> {  // then call callback enque method
 
 
-            override fun onResponse(
-                call: Call<List<GetImageData>>,
-                response: Response<List<GetImageData>>
-            ) {
+            override fun onResponse(call: Call<List<GetImageData>>, response: Response<List<GetImageData>>) {
                 progerssProgressDialog.dismiss()
                 imageList.addAll(response!!.body()!!)
                 recyclerView.adapter!!.notifyDataSetChanged()

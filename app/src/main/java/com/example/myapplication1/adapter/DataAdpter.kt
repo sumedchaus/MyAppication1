@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication1.R
 import com.example.myapplication1.dataclass.DataModel
 
-class DataAdpter(private var dataList: ArrayList<DataModel>, private val context: Context) : RecyclerView.Adapter<DataAdpter.ViewHolder>() {
+  class DataAdpter(private var dataList: ArrayList<DataModel>, private val context: Context) : RecyclerView.Adapter<DataAdpter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

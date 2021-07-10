@@ -7,14 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.myapplication1.adapter.ApiClient
 import com.example.myapplication1.databinding.UserFullDetailBinding
-import com.example.myapplication1.dataclass.Post
 import com.example.myapplication1.dataclass.personaldata.*
 import kotlinx.android.synthetic.main.user_full_detail.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UserFullDetailData: AppCompatActivity() {
+class PostUserFullDetailData: AppCompatActivity() {
      lateinit var binding : UserFullDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,11 +44,11 @@ class UserFullDetailData: AppCompatActivity() {
 
                     override fun onResponse(call: Call<PersonalData>, response: Response<PersonalData>) {
                         Log.d("UserFullDetailData::", response.body().toString())
-                        Toast.makeText(this@UserFullDetailData, "$response", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PostUserFullDetailData, "$response", Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onFailure(call: Call<PersonalData>, t: Throwable) {
-                        Toast.makeText(this@UserFullDetailData, "Operation Fail", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@PostUserFullDetailData, "Operation Fail", Toast.LENGTH_SHORT).show()
                     }
 
                 })
