@@ -33,9 +33,10 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         //data binding
-      //  val loanDAtaObj = LoanData(customerName = null, address = null, email = null,loanAmount = null,loantenure = null,mobileNumber = null,rateOfInterest = null)
-    // or use this
-       val loanDAtaObj = LoanData("Sumed", "1234567890", "sumedchaus@gmail.com", "habsiguda", "100000", "1", "1")
+        //  val loanDAtaObj = LoanData(customerName = null, address = null, email = null,loanAmount = null,loantenure = null,mobileNumber = null,rateOfInterest = null)
+        // or use this
+        val loanDAtaObj =
+            LoanData("Sumed", "1234567890", "sumedchaus@gmail.com", "habsiguda", "100000", "1", "1")
         binding.loanData = loanDAtaObj
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
@@ -61,6 +62,8 @@ class MainActivity : AppCompatActivity() {
 
 // validation for app
         binding.submitBtn.setOnClickListener {
+
+            // bcz of data binding no need to create variable of view
 //            var editTextCustomerName = editTextCustomerName.text.toString()
 //            var editTextMobileNumber = editTextMobileNumber.text.toString()
 //            var editTextEmailId = editTextEmailId.text.toString()
@@ -117,8 +120,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, BridgeActivity::class.java)
             startActivity(intent)
 
-            }
-
+        }
 
 
     }

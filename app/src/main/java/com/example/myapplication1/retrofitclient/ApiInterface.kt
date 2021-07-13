@@ -1,4 +1,4 @@
-package com.example.myapplication1.adapter
+package com.example.myapplication1.retrofitclient
 
 import com.example.myapplication1.dataclass.DataModel
 import com.example.myapplication1.dataclass.GetImageData

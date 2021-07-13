@@ -6,9 +6,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.myapplication1.adapter.ApiClient
+import com.example.myapplication1.retrofitclient.ApiClient
 import com.example.myapplication1.databinding.PostretrofitdataBinding
-import com.example.myapplication1.dataclass.DataModel
 import com.example.myapplication1.dataclass.Post
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bridge.*

@@ -34,6 +34,10 @@ class BridgeActivity: AppCompatActivity() {
             val intent = Intent(this, GetTodsData::class.java)
             startActivity(intent)
         }
+        uploadImageBridge.setOnClickListener {
+            val intent = Intent(this, ImageUpload::class.java)
+            startActivity(intent)
 
+        }
     }
 }

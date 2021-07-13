@@ -5,7 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.example.myapplication1.adapter.ApiClient
+import com.example.myapplication1.retrofitclient.ApiClient
 import com.example.myapplication1.databinding.UserFullDetailBinding
 import com.example.myapplication1.dataclass.personaldata.*
 import kotlinx.android.synthetic.main.user_full_detail.*

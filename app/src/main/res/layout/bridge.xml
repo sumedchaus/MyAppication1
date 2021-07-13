@@ -55,4 +55,14 @@
         android:text="@string/get_retrofit_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/uploadImageBridge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="upload Image"
+        app:layout_constraintBottom_toTopOf="@+id/get_personal_Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getImage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

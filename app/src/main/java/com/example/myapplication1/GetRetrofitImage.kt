@@ -5,12 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication1.adapter.ApiClient
-import com.example.myapplication1.adapter.DataAdpter
+import com.example.myapplication1.retrofitclient.ApiClient
 import com.example.myapplication1.adapter.GetImageDataAdapter
-import com.example.myapplication1.dataclass.DataModel
 import com.example.myapplication1.dataclass.GetImageData
-import com.example.myapplication1.dataclass.ListData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
