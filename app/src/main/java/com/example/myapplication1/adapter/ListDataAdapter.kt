@@ -29,7 +29,6 @@ class ListDataAdapter(var context: Context, var list: ArrayList<ListData>) :
         val viewholder = ViewHolder(binding)
         binding.showBtnTapbtn.setOnClickListener {
 
-
 //            val model = list.get(viewholder.adapterPosition)  // used for getting the adapter position
             // below 3 lines for toast msg
 //            val customDialog = AlertDialog.Builder(context)   // used for dialog creation

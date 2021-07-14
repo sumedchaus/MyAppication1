@@ -32,7 +32,9 @@ fun getPhotos(): Call<List<DataModel>>
     fun postUser(
         @Body personalData: PersonalData): Call<PersonalData>
 
-    @GET("tods")
+    @GET("photos")
     fun getTods(): Call<List<Tods>>
+
+
 
 }

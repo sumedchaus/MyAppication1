@@ -6,9 +6,13 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication1.retrofitclient.ApiClient
 import com.example.myapplication1.databinding.PostretrofitdataBinding
 import com.example.myapplication1.dataclass.Post
+import com.example.myapplication1.model.GetRetrofitDataViewModel
+import com.example.myapplication1.model.PostRetrofitDataViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bridge.*
 import kotlinx.android.synthetic.main.postretrofitdata.*
@@ -19,6 +23,10 @@ import retrofit2.Response
 class PostRetrofitData() : AppCompatActivity() {
     lateinit var binding: PostretrofitdataBinding
     lateinit var progerssProgressDialog: ProgressDialog
+
+    val postViewModel by lazy{
+        ViewModelProvider(this).get(PostRetrofitDataViewModel::class.java)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,28 +58,34 @@ class PostRetrofitData() : AppCompatActivity() {
                 Toast.makeText(this, "Please Enter body", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val modal = Post(postDataObj.userId, "1",postDataObj.title,postDataObj.body)
-            val call = ApiClient.api.pushPost(modal)
-            // or
-        //    val call = ApiClient.api.pushPost(Post(userIdEditText, "1", titleEditText, bodyEditText))
+            postViewModel.postApiCall()
 
 
-            call.enqueue(object : Callback<Post> {  // then call callback enque method
 
 
-                override fun onResponse(call: Call<Post>, response: Response<Post>) {
-                    Log.d("PostRetrofitData", response.body().toString())
-                    //    Log.d("PostRetrofitData" , response.body()!!.title) // or use this  for only single variable
-                    Toast.makeText(this@PostRetrofitData, "$response", Toast.LENGTH_SHORT).show()
+//            val modal = Post(postDataObj.userId, "1",postDataObj.title,postDataObj.body)
+//            val call = ApiClient.api.pushPost(modal)
+//            // or
+//        //    val call = ApiClient.api.pushPost(Post(userIdEditText, "1", titleEditText, bodyEditText))
+//
+//
+//            call.enqueue(object : Callback<Post> {  // then call callback enque method
+//
+//
+//                override fun onResponse(call: Call<Post>, response: Response<Post>) {
+//                    Log.d("PostRetrofitData", response.body().toString())
+//                    //    Log.d("PostRetrofitData" , response.body()!!.title) // or use this  for only single variable
+//                    Toast.makeText(this@PostRetrofitData, "$response", Toast.LENGTH_SHORT).show()
+//
+//
+//                }
+//
+//                override fun onFailure(call: Call<Post>, t: Throwable) {
+//                    Toast.makeText(this@PostRetrofitData, "Operation Fail", Toast.LENGTH_SHORT).show()
+//                }
+//
+//            })
 
-
-                }
-
-                override fun onFailure(call: Call<Post>, t: Throwable) {
-                    Toast.makeText(this@PostRetrofitData, "Operation Fail", Toast.LENGTH_SHORT).show()
-                }
-
-            })
             pushPost()
             pushPost1()
         }

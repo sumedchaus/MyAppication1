@@ -1,0 +1,19 @@
+For xml design
+1. always add constrain layout in every activity fragment,cardview, etc for better layout configuration
+2. always add kotlin extension and data binding first
+3. use data binding in every layout
+
+For recycler view
+1. if data binding is added in recycler view then use
+-    class ViewHolder(val binding: ItemlistloandataBinding) : RecyclerView.ViewHolder(binding.root) {}
+2. remember always give click events in adapter class(in viewHolder or create view holder) of that activity
+-      btDismiss.setOnClickListener {
+                    customDialog.dismiss()
+                }
+3. adapter class is always 90% same for every class
+4. always set adapter in the activity
+
+Retrofit Api call
+1. always check the sent data is similar to interface data ex. Call<List<DataModel>>
+
+
