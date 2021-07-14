@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication1.retrofitclient.ApiClient
-import com.example.myapplication1.adapter.DataAdpter
+import com.example.myapplication1.adapter.GetApiDataAdapter
 import com.example.myapplication1.dataclass.DataModel
 import com.example.myapplication1.dataclass.Post
 import com.example.myapplication1.model.GetRetrofitDataViewModel
@@ -33,7 +33,7 @@ class GetRetrofitData: AppCompatActivity() {
         recyclerView = findViewById(R.id.recycler_view)
 
         //setting up the adapter
-        recyclerView.adapter= DataAdpter(dataList,this)
+        recyclerView.adapter= GetApiDataAdapter(dataList,this)
         recyclerView.layoutManager= LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
 
         progerssProgressDialog=ProgressDialog(this)

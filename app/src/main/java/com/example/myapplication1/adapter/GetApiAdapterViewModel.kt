@@ -9,9 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication1.R
 import com.example.myapplication1.dataclass.GetImageData
+import com.example.myapplication1.dataclass.Tods
 
 
-class GetApiAdapterViewModel(private var imageList: List<GetImageData>, private val context: Context) : RecyclerView.Adapter<GetApiAdapterViewModel.ViewHolder>() {
+class GetApiAdapterViewModel(private var imageList: List<Tods>, private val context: Context) : RecyclerView.Adapter<GetApiAdapterViewModel.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,19 +28,20 @@ class GetApiAdapterViewModel(private var imageList: List<GetImageData>, private 
 
 
         holder.titleTextView.text=dataModel.title
-        holder.idTextView.text=dataModel.thumbnailUrl
-        holder.imageTextView.setImageResource(R.drawable.ic_baseline_calendar_today_24)
+        holder.idTextView.text=dataModel.albumId
+        holder.idTextView.text=dataModel.url
+
     }
 
 
     class ViewHolder(itemLayoutView: View) : RecyclerView.ViewHolder(itemLayoutView) {
         var titleTextView: TextView
         var idTextView : TextView
-        var imageTextView : ImageView
+        var imageTextView : TextView
         init {
-            titleTextView=itemLayoutView.findViewById(R.id.titleView)
-            idTextView=itemLayoutView.findViewById(R.id.idView)
-            imageTextView=itemLayoutView.findViewById(R.id.getDataImage)
+            titleTextView=itemLayoutView.findViewById(R.id.todstitleTextView)
+            idTextView=itemLayoutView.findViewById(R.id.todsuseridTextView)
+            imageTextView=itemLayoutView.findViewById(R.id.todsCompleteTExxtView)
         }
 
     }
