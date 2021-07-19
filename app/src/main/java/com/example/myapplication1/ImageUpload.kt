@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication1.dataclass.personaldata.UploadResponseImage
@@ -69,7 +70,8 @@ class ImageUpload :AppCompatActivity(),UploadRequestBody.UploadCallback {
 
             override fun onFailure(call: Call<UploadResponseImage>, t: Throwable) {
 
-                layout_root.snackbar(t.message!!)
+
+               // layout_root.snackbar(t.message!!)
             }
 
         })

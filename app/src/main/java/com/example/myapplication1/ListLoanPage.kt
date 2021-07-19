@@ -31,16 +31,23 @@ class ListLoanPage : AppCompatActivity() {
     fun namepage() {
         //crating an arraylist to store users using the data class user
 
-        myList.add(ListData("1", "sumed"))
-        myList.add(ListData("2", "sumed"))
-        myList.add(ListData("3", "sumed"))
-        myList.add(ListData("4", "sumed"))
-        myList.add(ListData("5", "sumed"))
-        myList.add(ListData("6", "sumed"))
-        myList.add(ListData("7 ", "sumed"))
-        myList.add(ListData("8", "sumed"))
-        myList.add(ListData("9", "sumed"))
-        myList.add(ListData("10", "sumed"))
+        myList.add(ListData("1", "sumed",R.drawable.ic_user))
+        myList.add(ListData("2", "sumed",R.drawable.ic_user))
+        myList.add(ListData("3", "sumed",R.drawable.ic_user))
+        myList.add(ListData("4", "sumed",R.drawable.ic_user))
+        myList.add(ListData("5", "sumed",R.drawable.ic_user))
+        myList.add(ListData("6", "sumed",R.drawable.ic_user))
+        myList.add(ListData("7", "sumed",R.drawable.ic_user))
+        myList.add(ListData("8", "sumed",R.drawable.ic_user))
+        myList.add(ListData("9", "sumed",R.drawable.ic_user))
+        myList.add(ListData("10","sumed",R.drawable.ic_user))
+        myList.add(ListData("10","sumed",R.drawable.ic_user))
+        myList.add(ListData("10","sumed",R.drawable.ic_user))
+        myList.add(ListData("10","sumed",R.drawable.ic_user))
+        myList.add(ListData("10","sumed",R.drawable.ic_user))
+        myList.add(ListData("10","sumed",R.drawable.ic_user))
+        myList.add(ListData("10","sumed",R.drawable.ic_user))
+        myList.add(ListData("10","sumed",R.drawable.ic_user))
 
     }
 

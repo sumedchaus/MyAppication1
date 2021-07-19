@@ -53,6 +53,19 @@
     <string name="body">Body</string>
     <string name="post">Post</string>
     <string name="tods_data">Tods Data</string>
+    <string name="personal_loan">Personal Loan</string>
+    <string name="dd_mm_yyyy">DD/MM/YYYY</string>
+    <string name="upload_image">upload Image</string>
+    <string name="download_image">Download Image</string>
+    <string name="login">LogIn</string>
+    <string name="button1">Button</string>
+    <string name="user_id_getData">User ID</string>
+    <string name="title1">Title</string>
+    <string name="complete">Complete</string>
+    <string name="personal_loan1">Personal Loan</string>
+    <string name="dd_mm_yyyy1">DD/MM/YYYY</string>
+    <string name="tap_to_select_image">Tap to select image</string>
+    <string name="upload">Upload</string>
 
 
 </resources>

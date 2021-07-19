@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+   >
+
     <TextView
+        android:id="@+id/custom_Dialog"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@drawable/ic_launcher_background"
-        android:text="@string/custom_dialog"
-        android:textSize="20sp"
-        android:textColor="@android:color/white"
         android:gravity="center"
-        />
+        android:text="@string/custom_dialog"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/thisisDialog1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/this_is_a_custom_dialog_message"
         android:textSize="16sp"
-        android:gravity="center"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#DEDEDE"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/custom_Dialog" />
+
+
     <Button
         android:id="@+id/btDismissCustomDialog"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="?selectableItemBackground"
         android:text="@string/dismiss"
-        />
-</LinearLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thisisDialog1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
 
         <variable
             name="loanData"
-            type="com.example.myapplication1.dataclass.LoanData" />
+            type="com.example.myapplication1.dataclass.LoginValidationData" />
 
     </data>
 
@@ -55,13 +55,13 @@
                     />
 
                 <EditText
-                    android:id="@+id/editTextCustomerName"
+                    android:id="@+id/editTextCustomerName1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:inputType="textPersonName"
                     android:text="@={loanData.customerName}"
+                    android:inputType="textPersonName"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/customerNameText"
 
@@ -75,13 +75,13 @@
                     android:text="@string/date_of_birth"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextCustomerName"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextCustomerName1"
 
                     />
 
 
                 <TextView
-                    android:id="@+id/editTextDateofBirth"
+                    android:id="@+id/editTextDateofBirth1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
@@ -94,13 +94,14 @@
                     />
 
                 <RadioGroup
-                    android:id="@+id/radioGroupMarried_Single"
+                    android:id="@+id/radioGroupMarried_Single1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextDateofBirth">
+
+                    app:layout_constraintTop_toBottomOf="@+id/editTextDateofBirth1">
 
                     <RadioButton
                         android:id="@+id/radioButton2"
@@ -117,8 +118,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/single"
                         android:textColor="@android:color/black"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginLeft="50dp" />
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginStart="50dp" />
 
                 </RadioGroup>
 
@@ -131,19 +132,19 @@
                     android:textColor="@android:color/black"
 
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/radioGroupMarried_Single"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroupMarried_Single1"
 
                     />
 
 
                 <EditText
-                    android:id="@+id/editTextMobileNumber"
+                    android:id="@+id/editTextMobileNumber1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:inputType="phone"
                     android:text="@={loanData.mobileNumber}"
+                    android:inputType="phone"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/mobileNoTextView"
 
@@ -158,13 +159,13 @@
                     android:textColor="@android:color/black"
 
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextMobileNumber"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextMobileNumber1"
 
                     />
 
 
                 <EditText
-                    android:id="@+id/editTextEmailId"
+                    android:id="@+id/editTextEmailId1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
@@ -185,20 +186,20 @@
                     android:textColor="@android:color/black"
 
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextEmailId"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextEmailId1"
 
                     />
 
 
                 <EditText
-                    android:id="@+id/editTextAddress"
+                    android:id="@+id/editTextAddress1"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
                     android:gravity="start"
-                    android:inputType="textCapSentences|textNoSuggestions|textMultiLine"
                     android:text="@={loanData.address}"
+                    android:inputType="textCapSentences|textNoSuggestions|textMultiLine"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
 
@@ -211,19 +212,19 @@
                     android:textColor="@android:color/black"
 
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextAddress1"
 
                     />
 
 
                 <EditText
-                    android:id="@+id/editTextLoanAmount"
+                    android:id="@+id/editTextLoanAmount1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:inputType="numberDecimal"
                     android:text="@={loanData.loanAmount}"
+                    android:inputType="numberDecimal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/loanAmountTextView"
 
@@ -238,20 +239,20 @@
                     android:textColor="@android:color/black"
 
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextLoanAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextLoanAmount1"
 
                     />
 
 
                 <EditText
-                    android:id="@+id/editTextLoanTenureAmount"
+                    android:id="@+id/editTextLoanTenureAmount1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
                     android:ems="10"
-                    android:inputType="number"
-
                     android:text="@={loanData.loantenure}"
+
+                    android:inputType="number"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/loanTenureAmountTextView"
 
@@ -265,13 +266,13 @@
                     android:text="@string/rate_of_interest"
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextLoanTenureAmount"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextLoanTenureAmount1"
 
                     />
 
 
                 <EditText
-                    android:id="@+id/editTextRateOfInterest"
+                    android:id="@+id/editTextRateOfInterest1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_border"
@@ -292,10 +293,10 @@
 
                     android:textColor="@android:color/black"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextRateOfInterest" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextRateOfInterest1" />
 
                 <Button
-                    android:id="@+id/submit_Btn"
+                    android:id="@+id/submit_Btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -308,10 +309,11 @@
                     android:id="@+id/calender_btn"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/editTextDateofBirth"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextDateofBirth1"
                     app:layout_constraintStart_toEndOf="@+id/DateofBirthTextview"
                     app:srcCompat="@drawable/ic_baseline_calendar_today_24"
                     tools:ignore="VectorDrawableCompat" />
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -321,6 +323,7 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </layout>

@@ -37,7 +37,10 @@ class BridgeActivity: AppCompatActivity() {
         uploadImageBridge.setOnClickListener {
             val intent = Intent(this, ImageUpload::class.java)
             startActivity(intent)
-
+        }
+        download_image.setOnClickListener {
+            val intent = Intent(this, DownloadImage::class.java)
+            startActivity(intent)
         }
     }
 }

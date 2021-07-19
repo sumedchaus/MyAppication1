@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication1">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
 
@@ -12,15 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-    android:theme="@style/AppTheme">
-        <activity android:name=".ImageUpload"></activity>
-        <activity android:name=".GetTodsData"></activity>
-        <activity android:name=".PostUserFullDetailData"></activity>
-        <activity android:name=".GetRetrofitImage"></activity>
-        <activity android:name=".PostRetrofitData"></activity>
-        <activity android:name=".BridgeActivity"></activity>
-        <activity android:name=".ListLoanPage"></activity>
-        <activity android:name=".GetRetrofitData"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".TryCatchActivity" />
+        <activity android:name=".DownloadImage" />
+        <activity android:name=".ImageUpload" />
+        <activity android:name=".GetTodsData" />
+        <activity android:name=".PostUserFullDetailData" />
+        <activity android:name=".GetRetrofitImage" />
+        <activity android:name=".PostRetrofitData" />
+        <activity android:name=".BridgeActivity" />
+        <activity android:name=".ListLoanPage" />
+        <activity android:name=".GetRetrofitData" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
