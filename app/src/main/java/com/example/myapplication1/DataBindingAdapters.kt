@@ -7,6 +7,9 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
+
+// used for adding image view to recycler view using data binding
+// due to glide we dont need to download the image data repetadly everytime we open the app.
 class DataBindingAdapters {
     companion object {
         @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
